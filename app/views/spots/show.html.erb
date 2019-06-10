@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="spot_content">
+
+        <h1><%= @spot.name %></h1>
+        
+        <% if logged_in? %>
+        <%= render 'layouts/visited_button', spot: @spot %>
+        <% end %>
+        
+        <% if @spot.image? %>
+            <div class="spot_content_img">
+                    <%= image_tag @spot.image.url %>
+            </div>
+
+        <% else %>
+         <i class="far fa-images"></i>
+        <% end %>
+   
+           <table class="table table-bordered">
+            <tr>
+
+                <td><%= @spot.content%></td>
+            </tr>
+
+        </table>
+     <h2>観光地情報</h2>
+        <table class="table table-bordered">
+            <tr>
+
+                <td>名称:<%= @spot.name %></td>
+                <td>名称:<%= @spot.prefecture %></td>
+            </tr>
+            <tr>
+
+                <td>住所:<%= @spot.adress %></td>
+            </tr>
+        </table>
+        <!--地図表示させる-->
+        <% if logged_in? %>
+        <% render 'layouts/visited_button', spot: @spot %>
+        <% end %>
+        
+        <% if current_user == @spot.user %>
+        <%= link_to '編集する', edit_spot_path(@spot) %>
+        <%= link_to '削除', @spot, method: :delete, data: {confirm: '削除してよろしいですか？'} %>
+        <% end %>
+    </div>
+
+
+    
+    
+</div>

@@ -1,0 +1,43 @@
+<% set_meta_tags noindex: true%>
+
+<div class="container">
+
+    
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+    
+        <%= form_with(model: @spot, local: true) do |f| %>
+          
+          <div class="form-group">
+            <%= f.label :prefecture, '都道府県' %>
+            <%= f.select :prefecture, [["大阪","大阪"],["兵庫","兵庫"],["京都","京都"],["奈良","奈良"]], class: 'form-control' %>
+          </div>
+    
+          <div class="form-group">
+            <%= f.label :city, '市区町村' %>
+            <%= f.text_field :city, class: 'form-control' %>
+          </div>          
+          <div class="form-group">
+            <%= f.label :adress, '住所' %>
+            <%= f.text_field :adress, class: 'form-control' %>
+          </div>
+    
+          <div class="form-group">
+            <%= f.label :name, '名称' %>
+            <%= f.text_field  :name, class: 'form-control' %>
+          </div>
+    
+          <div class="form-group">
+            <%= f.label :content, '紹介' %>
+            <%= f.text_field  :content, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :image, 'イメージ画像' %><br>
+            <%= f.file_field :image %>
+          </div>
+    
+          <%= f.submit '投稿する', class: 'btn btn-primary btn-block' %>
+        <% end %>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+
+    <% if current_user.visited?(spot) %>
+    
+        <%= form_with(model: current_user.visits.find_by(spot_id: spot.id),local: true, method: :delete) do |f| %>
+        <%= hidden_field_tag :spot_id, spot.id %> 
+        <%= f.submit 'unvisit', class: 'btn btn-primary' %>
+        <% end %>
+    <% else %>
+        <%= form_with(model: current_user.visits.build, local: true) do |f| %>
+        <%= hidden_field_tag :spot_id, spot.id %>
+        <%= f.submit 'visited!', class: 'btn btn-danger' %>
+        <% end %>
+        
+    <% end %>

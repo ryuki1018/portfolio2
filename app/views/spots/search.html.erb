@@ -1,0 +1,38 @@
+<div class="spot_conA pt-3">
+    <div class="search_content">
+        <%= form_with url: search_spots_path,method: :get,local: true do |f| %>
+        <%= f.text_field :search, class: 'form-control',placeholder:'都道府県 観光地名' %>
+        <%= f.submit '検索',class: "btn btn-info btn-s-md mt-1 mb-3"%>
+        
+      
+        <% end %>
+    </div>
+
+    <div class="spot_index_content">
+        検索結果：<%= @post %>
+
+          <ul>
+                <% @posts.each do |spot| %>
+                <li>
+                      <div class="spot_index_spot_content">
+                         <div class="spot_index_spot_contentA">
+                            <% if spot.image? %>
+                                <%= image_tag (spot.image_url),class: 'img' %>
+                            <% else %>
+                                <span class="fas fa-camera icon"></span> <!-- using a <span> element to reference the icon -->
+                            <% end %>
+                        </div>
+                        <div class="spot_index_spot_contentB">
+                            <p><%= spot.name %><br><%= link_to '詳細', spot_path(spot) %></p> 
+                        </div>
+                     </div>    
+                </li>
+                <% end %>
+            </ul>
+        
+
+
+        
+
+    </div>
+</div>

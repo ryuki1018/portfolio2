@@ -1,0 +1,33 @@
+<div class="container">
+    <div>
+    <h1>登録内容の確認</h1>
+    </div>
+    <div class="row">
+        <%= form_with(model: @user, local: true) do |f| %>
+        <table class="table table-hover">
+            <tr>
+                <th>名前</th>
+                <td><%= f.hidden_field :name %><%= @user.name %></td>
+            </tr>
+            <tr>
+                <th>email</th>
+                <td><%= f.hidden_field :email %><%= @user.email %></td>
+            </tr>
+            
+            <tr>
+                <th>パスワード</th>
+                <td><%= f.hidden_field :password %><%= @user.password %></td>
+            </tr>
+            
+            <tr>
+                <th>確認</th>
+                <td><%= f.hidden_field :password_confirmation %><%= @user.password_confirmation %></td>
+            </tr>
+        
+            </table>
+            
+        <%= f.submit '戻る',name:'back', class: 'btn btn-secondary btn-block' %>
+        <%= f.submit '登録', class: 'btn btn-primary btn-block' %>
+        <% end %>
+    </div>
+</div>

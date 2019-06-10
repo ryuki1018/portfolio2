@@ -1,0 +1,246 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//トップページ
+.top {
+    padding-top:200px;
+
+}
+
+.main-content {
+    background-color:rgba(255,255,255,0.8);
+
+    width:100%;
+    padding:20% 0 25% 0;
+    border-radius:5px;
+}
+
+.user_conA {
+    height:100vh;
+    background-image: url(/topimg.jpg);
+    background-position: center;
+    background-size:cover;
+    text-align:center;
+}
+
+.user_new_conA {
+    margin: 0 auto;
+    padding-top:100px ;
+}
+
+
+.user_conB {
+    margin:0 auto;
+    width:90%;
+    background:pink;
+
+}
+.user_conB h1 {
+    text-align:center;
+
+}
+
+
+
+.user_conB_content {
+    width:100%;
+    background:gray;
+
+}
+
+.user_conB_content ul{
+    width:100%;
+    list-style:none;
+    padding:0;
+    margin:0 auto;
+}
+
+.user_conB_content li{
+    list-style:none;
+    display:inline-block;
+}
+
+.content{
+    background:blue;
+    background-position: center;
+    width:48%;
+    height:20vh;
+    text-align:center;
+    margin-bottom:5px;
+}
+
+// ユーザーマイページ
+
+.user_show_conA {
+    margin:0 auto;
+    padding-top:20%;
+    width:90%;
+    
+}
+
+.user_show_conC {
+    width:100%;
+    margin:0;
+}
+
+.user_show_leftcon {
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.4);
+    width:100%;
+    border-radius:3px;
+    background-color:#FFF;
+    margin:0;
+}
+
+.user_show_prof h1 {
+    font-size:6vw;
+}
+
+
+.user_show_conB {
+        width:100%;
+        margin:0 auto;
+    }
+
+.fas {
+    width:100%;
+    height:300px;
+    line-height:300px;
+    font-size:40vw;
+    color:gray;
+    text-align:center;
+    background:#f8f8f8;
+}
+
+.user_show_myspot {
+    // border-radius:3px;
+    // background-color:#FAFAFA;
+    // box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+    // margin-bottom:10px;
+}
+
+.user_show_myspot ul{
+    list-style:none;
+    padding:0;
+}
+
+.img {
+    width:100%;
+    height:300px;
+    object-fit:contain;
+    background:#f8f8f8;
+}
+
+.user_show_myspot li{
+    list-style:none;
+    margin:0 auto 10px;
+    border-radius:3px;
+    background-color:#FFF;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.4);
+    margin-bottom:10px;
+}
+
+.user_show_myspot p {
+    margin-top:10px;
+    text-align:center;
+
+}
+
+.btn_post {
+    width:50%;
+
+    margin:0 25% 0 25%;
+}
+
+@media (min-width:768px){
+
+    
+    .user_show_leftcon {
+        box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.4);
+  
+        width:60%;
+        margin:20px auto 0;
+        border-radius:3px;
+        background-color:#FAFAFA;
+        
+    }
+    
+    .user_show_prof h1 {
+        font-size:2vw;
+        text-align:center;
+    }
+
+
+    .user_show_conB {
+        width:60%;
+        margin:0 auto;
+    }
+        
+    .img {
+        width:100%;
+        height:500px;
+        object-fit:contain;
+        background:#fff;
+    }
+    
+    .fas {
+        width:100%;
+        height:300px;
+        line-height:300px;
+        font-size:20vw;
+        color:gray;
+        text-align:center;
+        background:#f8f8f8;
+    }
+
+}
+
+@media (min-width:1080px) {
+    .user_show_conA {
+        display:flex;
+        width:90%;
+    }
+    
+    .user_show_conC {
+    width:25%;
+    margin:0;
+}
+    
+    .user_show_leftcon {
+        box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.4);
+   
+        width:100%;
+        
+        height:500px;
+        border-radius:3px;
+        // background-color:#FAFAFA;
+    }
+    .user_show_myspot_content {
+        display:flex;
+    }
+    
+    .user_show_myspot_contentA {
+        width:30%;
+        margin:0 auto;
+    }
+    .user_show_myspot_contentB {
+        width:50%;
+        margin:0 auto;
+    }
+    
+    .fas {
+        width:100%;
+        height:300px;
+        line-height:300px;
+        font-size:15vw;
+        color:gray;
+        text-align:center;
+        background:#f8f8f8;
+    }
+    
+    .user_show_conA {
+        padding-top:10%;
+    }
+}
+

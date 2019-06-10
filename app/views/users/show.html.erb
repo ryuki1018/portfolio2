@@ -1,0 +1,93 @@
+
+<div class="user_show_conA">
+    
+
+    <div class="user_show_conC">
+ 
+        
+        <div class="user_show_leftcon">
+            <div>
+                <h1>プロフィール</h1>
+            </div>
+            <table>
+                <tr>
+                    <th>氏名</th>
+                    <td><%= @user.name%></td>
+                </tr>
+                <tr>
+                    
+                </tr>
+            </table>
+    
+            <div>
+                <%= link_to '投稿',spots_new_path,class:'btn btn-primary btn_post' %>
+                <%= link_to 'マイページ編集',edit_user_path(@user) %>
+        
+            </div>
+            <table class="table">
+                <tr>
+                    <th>あなたの投稿</th>
+                </tr>
+                <% @spots.each do |spot| %>
+                    <tr>
+                        <td><%= spot.name %><%= link_to '詳細', spot %></td>
+                    </tr>
+                <% end %>
+            </table>
+        </div>
+    </div>
+    <div class="user_show_conB">
+
+        <div>
+
+            <h2>訪問済みスポット</h2>
+                <p>総合：<%= @counts_visit_spots %></p>
+                <p>大阪：<%= @counts_visit_osaka %></p>
+                <p>兵庫：<%= @counts_visit_hyogo %></p>
+                <p>奈良：<%= @counts_visit_nara %></p>
+                <p>京都：<%= @counts_visit_kyoto%></p>
+                <span></span>
+                
+            <h2>よく行く地域は...</h2>
+            <% @all_ranks.each.with_index(1) do |spot, i| %>
+            <p><%= i %>位:<%= spot.presence %></p>
+    
+            <% end %>
+        </div>
+        <div class="user_show_myspot">
+            <h2>訪問済み</h2>
+
+            <ul>
+                <% @visits.each do |visit| %>
+               
+                <li>
+                    <div class="user_show_myspot_content">
+                        
+                   
+                        <div class="user_show_myspot_contentA">
+                            <% if visit.image? %>
+                            <%= image_tag (visit.image_url),class: 'img' %>
+                        <% else %>
+                            <span class="fas fa-camera icon"></span> <!-- using a <span> element to reference the icon -->
+                        <% end %>
+                        </div>
+
+                        <div class="user_show_myspot_contentB">
+                            <h3><%= visit.name%></h3>
+                            <p><%= visit.prefecture %></p>
+                            <p><%= visit.adress %></p>
+                            <p><%= link_to '詳細', spot_path(visit) %></p> 
+                            <p><%= visit.user.name %></p>
+                        </div>
+                     </div>    
+                </li>
+
+                <% end %>
+                
+            </ul>
+
+            
+        </div>
+
+    </div>
+</div>
